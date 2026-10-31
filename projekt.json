@@ -1,0 +1,17 @@
+{
+  "id": "P06",
+  "status": "initialisiert",
+  "businessImplemented": false,
+  "fixture": "beispieldaten/temperaturen.csv",
+  "format": "csv",
+  "expectedRecords": 6,
+  "starter": "src/main.cpp",
+  "command": "cmake -S . -B build\ncmake --build build",
+  "implementationTickets": [
+    "P06-T01",
+    "P06-T02",
+    "P06-T03",
+    "P06-T04"
+  ],
+  "language": "de"
+}
