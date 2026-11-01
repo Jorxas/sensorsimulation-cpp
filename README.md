@@ -1,6 +1,6 @@
 # Sensorsimulation und industrielle Anzeige
 
-Stand: 31. Oktober 2026 — **initialisiert; Fachfunktionen noch umzusetzen**. Geplanter Abschluss der Basis: 2026-11-05, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 1. November 2026 — **P06-T01 lokal erledigt und geprüft; Fachfunktionen noch umzusetzen**. Veröffentlichung durch den übergeordneten Dienst ausstehend. Geplanter Abschluss der Basis: 2026-11-05, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein Prototyp soll Temperaturen überwachen und eine Schwellenüberschreitung melden.
 
@@ -16,6 +16,12 @@ Vorgesehene Technologien: C++, CMake, Linux, Embedded, MQTT/IoT, Qt, UML. Eine N
 4. [Arbeitsjournal](ARBEITSJOURNAL.md) und echte Nachweise aktualisieren.
 
 Abhängigkeiten: keine weiteren Projekte.
+
+## Geprüfter Teilstand P06-T01
+
+Der [Sensorvertrag](tickets/P06-T01.md) beschreibt Zustände, die Warnschwelle von einschließlich 30 °C, den synthetischen Messbereich −40 bis 125 °C und fehlende Daten. [projekt.json](projekt.json) enthält sechs erwartete JSON-Nachrichten zu den unveränderten CSV-Eingaben. Der lokale Abgleich prüft Nachrichtenformat, Reihenfolge und Grenzfälle; [Prüfausgabe](nachweise/P06-T01-pruefung.txt).
+
+Das ist eine geprüfte Spezifikation. C++-Fachfunktion, Kompilierung, UML, Qt, MQTT und Hardware sind weiterhin offen; alle Lastenheftkriterien bleiben offen. Nächste Phase ist P06-T02, frühestens in einer eigenen freigegebenen Arbeitseinheit.
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
 

@@ -1,9 +1,18 @@
 # Technischer Einstieg — P06
 
+## P06-T01 lokal prüfen
+
+Im Projektordner ausführen:
+
+~~~powershell
+uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_sensorvertrag.py
+~~~
+
+Voraussetzung: die vorhandene lokale Python-3.12-Laufzeit über uv; nur die Standardbibliothek, keine Installation. Prüft die sechs unveränderten Datensätze, die Vertragsparameter und sechs erwartete Nachrichten in `projekt.json` sowie acht flüchtige Grenzfälle. Erwartetes Ergebnis: `BESTANDEN`, Exitcode 0. Reproduzierbare Ausgabe der ausgeführten Prüfung: `nachweise/P06-T01-pruefung.txt`. Der Prüfer ist ein Vertragsabgleich und keine Produktimplementierung.
 
 ## Einstiegspunkt ausführen
 
-Voraussetzungen: C++-Compiler; CMake; Qt SDK für die grafische Variante; Lokaler MQTT-Broker für die MQTT-Variante.
+Für spätere Phasen: C++-Compiler und CMake; Qt SDK nur für die grafische Variante; lokaler MQTT-Broker nur für die MQTT-Variante. In P06-T01 wurden diese Werkzeuge nicht ausgeführt.
 
 ~~~powershell
 cmake -S . -B build
@@ -14,12 +23,6 @@ Das Startprogramm meldet den Initialisierungsstand. Fachfunktionen sind bewusst 
 
 ## Nächste Aufgabe
 
-Übergänge, Einheiten und Verhalten bei fehlenden Daten beschreiben.
+P06-T01 ist mit dem lokal geprüften [Sensorvertrag](tickets/P06-T01.md) abgeschlossen. Erst in einer später freigegebenen Phase P06-T02 die C++-Übergangsfunktion und das Einlesen entwickeln.
 
-## Technische Quellen
-
-- [Python-CSV-Modul](https://docs.python.org/3/library/csv.html)
-- [Offizielle Angular-CLI-Anleitung](https://angular.dev/tools/cli/setup-local)
-- [WPF mit .NET](https://learn.microsoft.com/de-de/dotnet/desktop/wpf/get-started/create-app-visual-studio)
-
-Vor dem Einbinden eines Frameworks dessen aktuelle offizielle Anleitung lesen.
+Die Zahlenwerte und Regeln dieses Vertrags sind lokale Projektentscheidungen. Vor dem späteren Einbinden eines Frameworks dessen aktuelle offizielle Anleitung lesen.

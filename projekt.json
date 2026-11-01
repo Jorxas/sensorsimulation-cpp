@@ -1,6 +1,6 @@
 {
   "id": "P06",
-  "status": "initialisiert",
+  "status": "P06-T01-geprueft",
   "businessImplemented": false,
   "fixture": "beispieldaten/temperaturen.csv",
   "format": "csv",
@@ -13,5 +13,20 @@
     "P06-T03",
     "P06-T04"
   ],
-  "language": "de"
+  "language": "de",
+  "sensorvertrag": {
+    "einheit": "°C",
+    "minimum_celsius": -40,
+    "maximum_celsius": 125,
+    "warnschwelle_celsius": 30,
+    "zustaende": ["normal", "warnung", "ungueltig"],
+    "nachrichten": [
+      {"schritt": 0, "temperatur_celsius": 20, "einheit": "°C", "zustand": "normal", "grund": "messwert"},
+      {"schritt": 1, "temperatur_celsius": 25, "einheit": "°C", "zustand": "normal", "grund": "messwert"},
+      {"schritt": 2, "temperatur_celsius": 31, "einheit": "°C", "zustand": "warnung", "grund": "messwert"},
+      {"schritt": 3, "temperatur_celsius": 30, "einheit": "°C", "zustand": "warnung", "grund": "messwert"},
+      {"schritt": 4, "temperatur_celsius": 29, "einheit": "°C", "zustand": "normal", "grund": "messwert"},
+      {"schritt": 5, "temperatur_celsius": null, "einheit": "°C", "zustand": "ungueltig", "grund": "nicht_numerisch"}
+    ]
+  }
 }

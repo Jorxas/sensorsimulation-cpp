@@ -1,0 +1,49 @@
+{
+    "projekt":  "P06",
+    "ticket":  "P06-T01",
+    "zustand":  "erledigt",
+    "beginn":  "2026-11-01T11:16:05.2514656+01:00",
+    "fertigstellung":  "2026-11-01T11:18:31.6041064+01:00",
+    "assistentenzeitSekunden":  146.4,
+    "studentischeSchaetzungMinuten":  30,
+    "menschlicheArbeitszeitBehauptet":  false,
+    "veroeffentlichung":  "ausstehend; durch übergeordneten Dienst",
+    "pruefbefehl":  "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_sensorvertrag.py",
+    "exitcode":  0,
+    "ergebnis":  "6 Nachrichten und 8 ergänzende Grenzfälle bestanden; 6 Originaldatensätze unverändert",
+    "grenze":  "Vertragsprüfung; C++-Kern, Qt, MQTT und Hardware offen",
+    "dateien":  [
+                    {
+                        "pfad":  "README.md",
+                        "sha256":  "e579a25285983299dc93cf5613fe5f41f14679e39ab4d53d377e57731c8362fe"
+                    },
+                    {
+                        "pfad":  "START.md",
+                        "sha256":  "b1443019b529d36a02ec4d36714cbb03fcf6d0868f9d9a1d98ed213663a11f40"
+                    },
+                    {
+                        "pfad":  "ARBEITSJOURNAL.md",
+                        "sha256":  "2de6363dd79e754177b3a3070bdc3c05e9cef7bf3be7a1b1e3f4e2e267120840"
+                    },
+                    {
+                        "pfad":  "projekt.json",
+                        "sha256":  "602fe33b9c5458296ea49a03e5e5b0fbd7d8a571e38b33d5af836ae7387c85bd"
+                    },
+                    {
+                        "pfad":  "tickets/P06-T01.md",
+                        "sha256":  "7fb6feafbfff232c6df4bad8aef727540fbeb6922d5f2cfaf82d8cfefca867f6"
+                    },
+                    {
+                        "pfad":  "beispieldaten/temperaturen.csv",
+                        "sha256":  "075559d75a4d7ac5cf3bd333c28306ab8b0af09c6ad0437fa41114584b1cbbc1"
+                    },
+                    {
+                        "pfad":  "nachweise/pruefe_sensorvertrag.py",
+                        "sha256":  "74ef7c3d02e8968be84cbb689e04418ca612c3abb8145f78b97b9df6e08adcdf"
+                    },
+                    {
+                        "pfad":  "nachweise/P06-T01-pruefung.txt",
+                        "sha256":  "e38e6ec0071d2b3a553377575062caf442e6fa3beffa2bc03fbef8c6cf21a106"
+                    }
+                ]
+}
