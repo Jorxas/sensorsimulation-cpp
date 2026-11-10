@@ -1,6 +1,6 @@
 # Sensorsimulation und industrielle Anzeige
 
-Stand: 3. November 2026 — **P06-T02 lokal erledigt und geprüft; C++-Kern umgesetzt**. Veröffentlichung durch den übergeordneten Dienst ausstehend. Geplanter Abschluss der Basis: 2026-11-05, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 11. November 2026 — **P06-T03 lokal erledigt und geprüft; CMake-Bau und Szenarien ausgeführt**. Veröffentlichung durch den übergeordneten Dienst ausstehend. Ursprünglicher Basiszieltermin verfehlt; Fortsetzungsplan: offene Entwicklung bis 15. November, Commitfolge bis 22. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein Prototyp soll Temperaturen überwachen und eine Schwellenüberschreitung melden.
 
@@ -29,7 +29,15 @@ Dieser Teilstand ist eine geprüfte Spezifikation; die Ergänzung durch P06-T02 
 
 Tatsächlich mit GCC 13.1.0 als C++17 ohne Warnungen kompiliert und ausgeführt: sechs unveränderte Originalmessungen, zehn flüchtige Messfälle und vier Datei-/Strukturfehler. [Prüfbefehl](START.md), [Prüfausgabe](nachweise/P06-T02-pruefung.txt). Studentische Schätzung für T02: 90 Minuten; tatsächliche Assistentenzeit und beide Versuche stehen im Journal.
 
-Die direkte Kompilierung dient ausschließlich der Abnahme dieses Kerns. CMake und weitere Szenarien aus P06-T03 sowie UML, Qt, MQTT und Hardware bleiben offen. Alle übergreifenden Lastenheftkriterien bleiben zur gesonderten Gesamtabnahme offen. Die Nutzung des vorhandenen GCC belegt keine praktische Nutzung der CLion-Oberfläche. Hier endet P06-T02; keine Folgephase begonnen.
+Die direkte Kompilierung diente ausschließlich der Abnahme dieses Kerns in P06-T02. Die Nutzung des vorhandenen GCC belegt keine praktische Nutzung der CLion-Oberfläche.
+
+## Geprüfter CMake-Bau P06-T03
+
+Mit CMake 4.1.2, Ninja 1.12.1 und GCC 13.1.0 unter Windows aus einem frischen Bauordner kompiliert und die erzeugte C++-Konsole tatsächlich ausgeführt. Die sechs Originalmessungen entsprechen dem Sensorvertrag. Zusätzliche flüchtige Eingaben zeigen bei 29,5 / 30 / 30,5 / 29,5 °C die Folge `normal, warnung, warnung, normal`. Ein nicht numerischer Messwert ergibt `null` und `ungueltig`, der nächste gültige Wert wieder `normal` (Exitcode 0). Eine fehlerhafte Schrittfolge wird mit deutscher Fehlermeldung und Exitcode 1 ohne Teilfolge abgewiesen.
+
+Wiederholung: [Startanleitung](START.md), [Prüfskript einschließlich Szenarioeingaben](nachweise/pruefe_cmake_szenarien.py), [Ausführungsprotokoll](nachweise/P06-T03-pruefung.txt), [Abschluss mit Dateiprüfsummen](nachweise/P06-T03-abschluss.json). Originaldaten: unverändert sechs Einträge. Studentische Schätzung: 75 Minuten; tatsächliche Assistentenzeit im Journal.
+
+Der freigegebene Endpunkt umfasst CMake und diese Szenarien. Das zuvor abweichende UML-Kriterium im Ticket wurde darauf begrenzt; UML bleibt offen. Alle übergreifenden Lastenheftkriterien bleiben zur gesonderten Gesamtabnahme offen. Keine Ausführung von Qt, MQTT, Hardware, Linux oder der CLion-Oberfläche behauptet. Hier endet P06-T03; keine Folgephase begonnen.
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
 

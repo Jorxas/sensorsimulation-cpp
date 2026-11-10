@@ -1,0 +1,62 @@
+{
+    "projekt":  "P06",
+    "ticket":  "P06-T03",
+    "zustand":  "erledigt",
+    "beginn_zeitmessung":  "2026-11-11T00:00:43.6257143+01:00",
+    "fertigstellung":  "2026-11-11T00:04:21.0579632+01:00",
+    "sicherung":  "2026-11-11T00:04:21.3631188+01:00",
+    "assistentenzeit_bis_abschlussdokumentation_sekunden":  217.4,
+    "studentische_schaetzung_minuten":  75,
+    "menschliche_arbeitszeit_behauptet":  false,
+    "veroeffentlichung":  "ausstehend; ausschließlich übergeordneter Dienst",
+    "pruefbefehl":  "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_cmake_szenarien.py --cmake \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/cmake/win/x64/bin/cmake.exe\" --ninja \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/ninja/win/x64/ninja.exe\" --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
+    "exitcode":  0,
+    "ergebnis":  "Frischer CMake-/Ninja-Bau mit GCC; sechs Originalmessungen, Grenzwert, ungültiger Messwert mit Erholung und CSV-Strukturfehler bestanden",
+    "grenze":  "Nur CMake und C++-Konsole; UML, Qt, MQTT, Hardware und Lastenheft-Gesamtabnahme offen",
+    "dateien":  [
+                    {
+                        "pfad":  "CMakeLists.txt",
+                        "sha256":  "8502cec30ab4201794d31183ffa343e7241080d3dac3b3d97affe8ab1f5901ca"
+                    },
+                    {
+                        "pfad":  "src/main.cpp",
+                        "sha256":  "a9293ebb2474d68e3ba679fb00be2d6da2b36293ebc72333523e5635b7813e08"
+                    },
+                    {
+                        "pfad":  "projekt.json",
+                        "sha256":  "e36202a2f7dd6ce8b0e05efbf05c1037235919edba411b56ebf999029bc03686"
+                    },
+                    {
+                        "pfad":  "beispieldaten/temperaturen.csv",
+                        "sha256":  "075559d75a4d7ac5cf3bd333c28306ab8b0af09c6ad0437fa41114584b1cbbc1"
+                    },
+                    {
+                        "pfad":  "START.md",
+                        "sha256":  "c161e6eb6288ccfb2bc2f501f58b359a8dbc58ff7715f4424ac111b5edd82abe"
+                    },
+                    {
+                        "pfad":  "README.md",
+                        "sha256":  "5c49eb72f51fde8f250c713f59d2813cc36ee43b30340b9c2d35f7f9281616cb"
+                    },
+                    {
+                        "pfad":  "ARBEITSJOURNAL.md",
+                        "sha256":  "051d33cf45425f99e4991f2603141fd453bffe997640f6e1b9c21a06e83e52bc"
+                    },
+                    {
+                        "pfad":  "tickets/P06-T03.md",
+                        "sha256":  "9bb45e4d9e0456a2687e27af672ad048edaad69dc6e181de764ccdf4dd4898cc"
+                    },
+                    {
+                        "pfad":  "nachweise/pruefe_cmake_szenarien.py",
+                        "sha256":  "3d6fbdea7829b9a534a5ea9bafde085c3f4ef216629a40216a2facdb008733fa"
+                    },
+                    {
+                        "pfad":  "nachweise/P06-T03-pruefung.txt",
+                        "sha256":  "63a25e603dcb395c2aa74238106e1a4033a50fab5e443fa27e34678571bbf0e1"
+                    },
+                    {
+                        "pfad":  "nachweise/P06-T03-diffpruefung.txt",
+                        "sha256":  "571fe622f479f6b004d4a484e90ee88d6b30d1f9f112a8deaeb1bf17e411b2ca"
+                    }
+                ]
+}

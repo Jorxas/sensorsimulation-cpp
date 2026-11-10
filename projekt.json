@@ -1,21 +1,29 @@
 {
   "id": "P06",
-  "status": "P06-T02-geprueft",
+  "status": "P06-T03-geprueft",
   "businessImplemented": true,
   "fixture": "beispieldaten/temperaturen.csv",
   "format": "csv",
   "expectedRecords": 6,
   "starter": "src/main.cpp",
-  "command": "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_cpp_kern.py --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
+  "command": "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_cmake_szenarien.py --cmake \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/cmake/win/x64/bin/cmake.exe\" --ninja \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/ninja/win/x64/ninja.exe\" --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
   "kernabnahme": {
     "umfang": "C++-Übergangsfunktion und Einlesen; keine Gesamtabnahme",
     "kompilierer": "GCC 13.1.0",
     "standard": "C++17",
     "nachweis": "nachweise/P06-T02-pruefung.txt",
-    "cmake_geprueft": false,
+    "cmake_geprueft": true,
     "qt_geprueft": false,
     "mqtt_geprueft": false,
     "hardware_geprueft": false
+  },
+  "cmake_abnahme": {
+    "ticket": "P06-T03",
+    "umfang": "Frischer CMake-Bau und Szenarien der C++-Konsole; keine Gesamtabnahme",
+    "werkzeuge": "CMake 4.1.2, Ninja 1.12.1, GCC 13.1.0 unter Windows",
+    "nachweis": "nachweise/P06-T03-pruefung.txt",
+    "pruefskript": "nachweise/pruefe_cmake_szenarien.py",
+    "uml_geprueft": false
   },
   "implementationTickets": [
     "P06-T01",
