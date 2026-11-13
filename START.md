@@ -47,6 +47,22 @@ Alle zusätzlichen CSV-Eingaben stehen im Prüfskript und werden samt frischem B
 
 ## Abgrenzung nach P06-T03
 
-P06-T03 endet nach CMake-Bau und Szenarien. UML sowie Lastenheft-Gesamtabnahme bleiben offen; P06-T04 wurde nicht begonnen. Qt SDK, MQTT-Broker und Hardware sind nur in gesonderten Varianten relevant. Die Werkzeugausführung unter Windows belegt keine Nutzung von Linux oder der CLion-Oberfläche.
+P06-T03 endete nach CMake-Bau und Szenarien. UML sowie Lastenheft-Gesamtabnahme bleiben offen; der später freigegebene Vorbereitungsschritt T04 steht unten. Qt SDK, MQTT-Broker und Hardware sind nur in gesonderten Varianten relevant. Die Werkzeugausführung unter Windows belegt keine Nutzung von Linux oder der CLion-Oberfläche.
 
 Die Zahlenwerte und Regeln dieses Vertrags sind lokale Projektentscheidungen. Vor dem späteren Einbinden eines Frameworks dessen aktuelle offizielle Anleitung lesen.
+
+## P06-T04: Anzeigeentwurf und MQTT-Nutzdaten lokal prüfen
+
+Im Projektordner ausführen:
+
+~~~powershell
+uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_anzeigevertrag.py --kompilierer 'C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe'
+~~~
+
+Voraussetzungen: vorhandenes Python 3.12 über uv und GCC 13.1.0. Keine Installation, keine Python-Zusatzpakete. GCC-Pfad bei anderer lokaler Installation über das Argument anpassen. Der Prüftreiber kompiliert `src/main.cpp` mit C++17 und Warnungen in einen frischen temporären Ordner unter `ausgabe/`, führt die Konsole mit `beispieldaten/temperaturen.csv` aus und entfernt den temporären Bau. Die konkreten Compiler- und Programmbefehle stehen im Protokoll.
+
+Erwartet: Exitcode 0 und `Abnahme BESTANDEN`. Sechs C++-JSON-Nachrichten entsprechen vollständig `sensorvertrag.nachrichten`; die abgeleiteten Textprojektionen passen zur Tabelle in `tickets/P06-T04.md`. Insbesondere 30 °C ergibt Warnung und `null` ergibt „— °C“/„Ungültig“. Die MQTT-Konfiguration wird auf die dokumentierten lokalen Parameter abgeglichen. Originaldaten bleiben mit sechs Einträgen und derselben SHA256-Prüfsumme erhalten. Keine neuen Beispieldaten.
+
+Nachweise: `nachweise/P06-T04-pruefung.txt`, `nachweise/P06-T04-diffpruefung.txt`, `nachweise/P06-T04-abschluss.json`. Zur Wiederholung nötig: `nachweise/pruefe_anzeigevertrag.py` (enthält sämtliche Sollprojektionen), `src/main.cpp`, `projekt.json`, `beispieldaten/temperaturen.csv`, `tickets/P06-T04.md` und diese Anleitung. Keine weiteren Testquellen; CMake ist für diese kleine Wiederholungsprüfung nicht erforderlich, sein Nachweis bleibt separat bei T03.
+
+Die Qt-Ansicht ist eine Textskizze, MQTT ein dokumentierter Vertrag. Der Prüfer startet weder Qt noch MQTT und simuliert keinen Broker. Qt, MQTT, physische Hardware, UML und die Lastenheft-Gesamtabnahme bleiben ohne neuen Ausführungsnachweis offen. Vor einer Kompetenzangabe muss die jeweilige Variante tatsächlich ausgeführt werden. Hier endet der Vorbereitungsschritt T04; keine Erweiterung begonnen.

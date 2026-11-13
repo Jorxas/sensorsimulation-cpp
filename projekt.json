@@ -1,12 +1,12 @@
 {
   "id": "P06",
-  "status": "P06-T03-geprueft",
+  "status": "P06-T04-vorbereitung-geprueft",
   "businessImplemented": true,
   "fixture": "beispieldaten/temperaturen.csv",
   "format": "csv",
   "expectedRecords": 6,
   "starter": "src/main.cpp",
-  "command": "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_cmake_szenarien.py --cmake \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/cmake/win/x64/bin/cmake.exe\" --ninja \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/ninja/win/x64/ninja.exe\" --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
+  "command": "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_anzeigevertrag.py --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
   "kernabnahme": {
     "umfang": "C++-Übergangsfunktion und Einlesen; keine Gesamtabnahme",
     "kompilierer": "GCC 13.1.0",
@@ -24,6 +24,33 @@
     "nachweis": "nachweise/P06-T03-pruefung.txt",
     "pruefskript": "nachweise/pruefe_cmake_szenarien.py",
     "uml_geprueft": false
+  },
+  "anzeigevorbereitung": {
+    "ticket": "P06-T04",
+    "umfang": "Qt-Textskizze und MQTT-Vertrag; keine Frameworkausführung",
+    "entwurf": "tickets/P06-T04.md",
+    "pruefskript": "nachweise/pruefe_anzeigevertrag.py",
+    "nachweis": "nachweise/P06-T04-pruefung.txt",
+    "anzeigetexte": {
+      "normal": "Normal",
+      "warnung": "Warnung",
+      "ungueltig": "Ungültig"
+    },
+    "fehlender_wert": "—",
+    "mqtt_vertrag": {
+      "version": "3.1.1",
+      "broker": "127.0.0.1",
+      "port": 1883,
+      "thema": "p06/sensor/temperatur",
+      "qos": 0,
+      "retain": false,
+      "clean_session": true,
+      "kodierung": "UTF-8",
+      "nutzdaten": "sensorvertrag.nachrichten"
+    },
+    "qt_ausgefuehrt": false,
+    "mqtt_ausgefuehrt": false,
+    "hardware_ausgefuehrt": false
   },
   "implementationTickets": [
     "P06-T01",

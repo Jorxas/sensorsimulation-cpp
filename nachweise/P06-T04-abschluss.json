@@ -1,0 +1,59 @@
+{
+    "projekt":  "P06",
+    "ticket":  "P06-T04",
+    "zustand":  "erledigt",
+    "beginn_zeitmessung":  "2026-11-13T00:01:01.7939594+01:00",
+    "fertigstellung":  "2026-11-13T00:13:18.3877190+01:00",
+    "sicherung":  "2026-11-13T00:13:19.6232336+01:00",
+    "assistentenzeit_bis_abschlussdokumentation_sekunden":  736.6,
+    "studentische_schaetzung_minuten":  45,
+    "menschliche_arbeitszeit_behauptet":  false,
+    "veroeffentlichung":  "ausstehend; ausschließlich übergeordneter Dienst",
+    "pruefbefehl":  "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_anzeigevertrag.py --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
+    "exitcode":  0,
+    "diffpruefung_exitcode":  0,
+    "ergebnis":  "Qt-Textskizze und MQTT-Vertrag vorbereitet; frisch kompilierte C++-Konsole mit sechs Originalmessungen ausgeführt; Nutzdaten und Textprojektionen konsistent",
+    "grenze":  "Keine Ausführung von Qt, MQTT oder Hardware; UML, Varianten und Lastenheft-Gesamtabnahme offen",
+    "dateien":  [
+                    {
+                        "pfad":  "src/main.cpp",
+                        "sha256":  "a9293ebb2474d68e3ba679fb00be2d6da2b36293ebc72333523e5635b7813e08"
+                    },
+                    {
+                        "pfad":  "projekt.json",
+                        "sha256":  "75b63623d8f1d50ce38e76f388b24758519b203e935bc064c6e1877ae7f1c5b8"
+                    },
+                    {
+                        "pfad":  "beispieldaten/temperaturen.csv",
+                        "sha256":  "075559d75a4d7ac5cf3bd333c28306ab8b0af09c6ad0437fa41114584b1cbbc1"
+                    },
+                    {
+                        "pfad":  "tickets/P06-T04.md",
+                        "sha256":  "9f6f2efdb050cb05950dd426aecac2d65b213ae90c14af16bfa993b0ff1613e3"
+                    },
+                    {
+                        "pfad":  "START.md",
+                        "sha256":  "9622841ebfa4da956f4e76b9aa8d9de867a5b6cbbf0c51af7606e48dffe47879"
+                    },
+                    {
+                        "pfad":  "README.md",
+                        "sha256":  "47a463d9d1d7922db8750d73c2b8544148fdb39af57f0148770c4b1ec62f2d43"
+                    },
+                    {
+                        "pfad":  "ARBEITSJOURNAL.md",
+                        "sha256":  "84b49de6eaa0622d7bbb306d2a72b14e1b6edb48b63221c1616b49d59fb25398"
+                    },
+                    {
+                        "pfad":  "nachweise/pruefe_anzeigevertrag.py",
+                        "sha256":  "6db1d279f7203430badf6192ab75cc2c3617ab49a3e7a1b084b17c0b5503a5c3"
+                    },
+                    {
+                        "pfad":  "nachweise/P06-T04-pruefung.txt",
+                        "sha256":  "3ffd4383ba796a9c186a9229380427f16195ad84ed49d186d7ecdde4484a411d"
+                    },
+                    {
+                        "pfad":  "nachweise/P06-T04-diffpruefung.txt",
+                        "sha256":  "73f841b405bb47fa44d4dc7ed7debadc9c3ecece4c951659434c7ecdbbe35138"
+                    }
+                ]
+}

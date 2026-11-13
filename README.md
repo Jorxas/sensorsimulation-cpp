@@ -1,6 +1,6 @@
 # Sensorsimulation und industrielle Anzeige
 
-Stand: 11. November 2026 — **P06-T03 lokal erledigt und geprüft; CMake-Bau und Szenarien ausgeführt**. Veröffentlichung durch den übergeordneten Dienst ausstehend. Ursprünglicher Basiszieltermin verfehlt; Fortsetzungsplan: offene Entwicklung bis 15. November, Commitfolge bis 22. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 13. November 2026 — **P06-T04 lokal erledigt und geprüft; Qt-Skizze und MQTT-Vertrag vorbereitet**. Veröffentlichung durch den übergeordneten Dienst ausstehend. Ursprünglicher Basiszieltermin verfehlt; Fortsetzungsplan: offene Entwicklung bis 15. November, Commitfolge bis 22. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein Prototyp soll Temperaturen überwachen und eine Schwellenüberschreitung melden.
 
@@ -40,6 +40,12 @@ Wiederholung: [Startanleitung](START.md), [Prüfskript einschließlich Szenarioe
 Der freigegebene Endpunkt umfasst CMake und diese Szenarien. Das zuvor abweichende UML-Kriterium im Ticket wurde darauf begrenzt; UML bleibt offen. Alle übergreifenden Lastenheftkriterien bleiben zur gesonderten Gesamtabnahme offen. Keine Ausführung von Qt, MQTT, Hardware, Linux oder der CLion-Oberfläche behauptet. Hier endet P06-T03; keine Folgephase begonnen.
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
+
+## Geprüfte Vorbereitung P06-T04
+
+Die [Textskizze und der MQTT-Vertrag](tickets/P06-T04.md) beschreiben die Anzeige bei Normalzustand, Warnung und ungültigem Messwert sowie den späteren lokalen Nachrichtenaustausch. `projekt.json` enthält Anzeigetexte und Transportparameter. Die C++-Konsole wurde mit GCC 13.1.0 frisch kompiliert und mit allen sechs unveränderten Originalmessungen ausgeführt. Die Nachrichten und daraus abgeleiteten Textprojektionen stimmen mit dem Entwurf überein: 20 / 25 / 31 / 30 / 29 / — °C; Normal / Normal / Warnung / Warnung / Normal / Ungültig.
+
+Wiederholung: [Startanleitung](START.md), [Prüfskript](nachweise/pruefe_anzeigevertrag.py), [Protokoll](nachweise/P06-T04-pruefung.txt), [Abschluss](nachweise/P06-T04-abschluss.json). Studentische Schätzung: 45 Minuten; tatsächliche Assistentenzeit im Journal. Nur Vorbereitung lokal abgenommen; Qt, MQTT und Hardware wurden nicht ausgeführt und daraus wird keine Kompetenz abgeleitet. Ihre Verfügbarkeit wurde für diesen Entwurf nicht geprüft. P06-V01/P06-V02 bleiben geplant und nicht begonnen, UML und Lastenheft A1–A4 offen. Hier endet T04.
 
 ## Projektsprache
 
