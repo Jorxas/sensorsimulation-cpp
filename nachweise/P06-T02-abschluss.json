@@ -1,0 +1,64 @@
+{
+  "projekt": "P06",
+  "ticket": "P06-T02",
+  "zustand": "erledigt",
+  "versuch": 2,
+  "versuch_1": "unterbrochen; Zeit und Ergebnis nicht belegbar",
+  "beginn_zeitmessung": "2026-11-03T08:11:04+01:00",
+  "fertigstellung": "2026-11-03T08:15:48.649015+01:00",
+  "assistentenzeit_gemessener_abschnitt_sekunden": 284.6,
+  "zeitgrenze": "Erstes Lesen wenige Sekunden vor erstem Zeitabruf; erster Versuch unbekannt.",
+  "studentische_schaetzung_minuten": 90,
+  "menschliche_arbeitszeit_behauptet": false,
+  "veroeffentlichung": "ausstehend; ausschließlich übergeordneter Dienst",
+  "pruefbefehl": "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_cpp_kern.py --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
+  "exitcode": 0,
+  "ergebnis": "GCC 13.1.0, C++17, keine Warnungen; 6 Originalmessungen, 10 flüchtige Messfälle und 4 Datei-/Strukturfehler bestanden",
+  "grenze": "Nur C++-Kern; CMake, UML, Qt, MQTT und Hardware offen; Lastenheft unverändert",
+  "dateien": [
+    {
+      "pfad": "src/main.cpp",
+      "sha256": "a9293ebb2474d68e3ba679fb00be2d6da2b36293ebc72333523e5635b7813e08"
+    },
+    {
+      "pfad": "README.md",
+      "sha256": "fcf0a9833b7d5b21d872b9d999cd03067d8b699cdfa6ff12ba43458249166f85"
+    },
+    {
+      "pfad": "START.md",
+      "sha256": "e5b288da6f65bdbba59aa1171a8e05ca7defcecc9ff798b982e5233bd70c8182"
+    },
+    {
+      "pfad": "ARBEITSJOURNAL.md",
+      "sha256": "1aa02a320c0787183734e6c4a43b20f044fee5cf02d4b97cc8318c2239ea4d9c"
+    },
+    {
+      "pfad": "projekt.json",
+      "sha256": "7f689836fa2c94ff4c770331821a316d68f65c140565d9f10ad2bac74d114cf1"
+    },
+    {
+      "pfad": "tickets/P06-T02.md",
+      "sha256": "f9b656de262d1b00e931fc4ce55fe4ee4c9af820bec5113b883e91794933b9c0"
+    },
+    {
+      "pfad": "beispieldaten/temperaturen.csv",
+      "sha256": "075559d75a4d7ac5cf3bd333c28306ab8b0af09c6ad0437fa41114584b1cbbc1"
+    },
+    {
+      "pfad": "nachweise/pruefe_cpp_kern.py",
+      "sha256": "bc0e66856ba4eb6e5e1406ebbcbf73e7daa7dbb8faf52326e9c92cde906d3821"
+    },
+    {
+      "pfad": "nachweise/P06-T02-pruefung.txt",
+      "sha256": "5526af94aac1622eaf0bc0a32475f5b1f144aa95cebee394c8e39acf563ecdd0"
+    },
+    {
+      "pfad": "nachweise/P06-T02-diffpruefung.txt",
+      "sha256": "f121ec8749c09b81198ab2ba338bc6d1a2acb899a37f3548cea18a78c76601d0"
+    },
+    {
+      "pfad": "ausgabe/sensorsimulation.exe",
+      "sha256": "14c5023fa2bc419221708fcd846f5bd30e7b32f551cf70f4b610be7e5963aa3c"
+    }
+  ]
+}

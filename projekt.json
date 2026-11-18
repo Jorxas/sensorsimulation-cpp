@@ -1,0 +1,77 @@
+{
+  "id": "P06",
+  "status": "P06-T04-vorbereitung-geprueft",
+  "businessImplemented": true,
+  "fixture": "beispieldaten/temperaturen.csv",
+  "format": "csv",
+  "expectedRecords": 6,
+  "starter": "src/main.cpp",
+  "command": "uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_anzeigevertrag.py --kompilierer \"C:/Program Files/JetBrains/CLion 2025.3.4/bin/mingw/bin/g++.exe\"",
+  "kernabnahme": {
+    "umfang": "C++-Übergangsfunktion und Einlesen; keine Gesamtabnahme",
+    "kompilierer": "GCC 13.1.0",
+    "standard": "C++17",
+    "nachweis": "nachweise/P06-T02-pruefung.txt",
+    "cmake_geprueft": true,
+    "qt_geprueft": false,
+    "mqtt_geprueft": false,
+    "hardware_geprueft": false
+  },
+  "cmake_abnahme": {
+    "ticket": "P06-T03",
+    "umfang": "Frischer CMake-Bau und Szenarien der C++-Konsole; keine Gesamtabnahme",
+    "werkzeuge": "CMake 4.1.2, Ninja 1.12.1, GCC 13.1.0 unter Windows",
+    "nachweis": "nachweise/P06-T03-pruefung.txt",
+    "pruefskript": "nachweise/pruefe_cmake_szenarien.py",
+    "uml_geprueft": false
+  },
+  "anzeigevorbereitung": {
+    "ticket": "P06-T04",
+    "umfang": "Qt-Textskizze und MQTT-Vertrag; keine Frameworkausführung",
+    "entwurf": "tickets/P06-T04.md",
+    "pruefskript": "nachweise/pruefe_anzeigevertrag.py",
+    "nachweis": "nachweise/P06-T04-pruefung.txt",
+    "anzeigetexte": {
+      "normal": "Normal",
+      "warnung": "Warnung",
+      "ungueltig": "Ungültig"
+    },
+    "fehlender_wert": "—",
+    "mqtt_vertrag": {
+      "version": "3.1.1",
+      "broker": "127.0.0.1",
+      "port": 1883,
+      "thema": "p06/sensor/temperatur",
+      "qos": 0,
+      "retain": false,
+      "clean_session": true,
+      "kodierung": "UTF-8",
+      "nutzdaten": "sensorvertrag.nachrichten"
+    },
+    "qt_ausgefuehrt": false,
+    "mqtt_ausgefuehrt": false,
+    "hardware_ausgefuehrt": false
+  },
+  "implementationTickets": [
+    "P06-T01",
+    "P06-T02",
+    "P06-T03",
+    "P06-T04"
+  ],
+  "language": "de",
+  "sensorvertrag": {
+    "einheit": "°C",
+    "minimum_celsius": -40,
+    "maximum_celsius": 125,
+    "warnschwelle_celsius": 30,
+    "zustaende": ["normal", "warnung", "ungueltig"],
+    "nachrichten": [
+      {"schritt": 0, "temperatur_celsius": 20, "einheit": "°C", "zustand": "normal", "grund": "messwert"},
+      {"schritt": 1, "temperatur_celsius": 25, "einheit": "°C", "zustand": "normal", "grund": "messwert"},
+      {"schritt": 2, "temperatur_celsius": 31, "einheit": "°C", "zustand": "warnung", "grund": "messwert"},
+      {"schritt": 3, "temperatur_celsius": 30, "einheit": "°C", "zustand": "warnung", "grund": "messwert"},
+      {"schritt": 4, "temperatur_celsius": 29, "einheit": "°C", "zustand": "normal", "grund": "messwert"},
+      {"schritt": 5, "temperatur_celsius": null, "einheit": "°C", "zustand": "ungueltig", "grund": "nicht_numerisch"}
+    ]
+  }
+}
