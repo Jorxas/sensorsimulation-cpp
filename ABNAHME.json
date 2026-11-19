@@ -1,0 +1,14 @@
+{
+  "projekt": "P06",
+  "phase": 4,
+  "snapshot": "2788bad623c83b9bda6fe127c31a5b1881593be50805da10053b6134f4feb5b8",
+  "quellcommit": "a13ea71b808ec61dedd532aa4642b1459f3be74c",
+  "lokal_committet_am": "2026-11-13T10:38:54+01:00",
+  "technisch_gesichert_am": "2026-11-12T23:00:06.014Z",
+  "unveraenderlicher_quellstand_geprueft": true,
+  "redaktionell_angepasst": [
+    "nachweise/P06-T01-abschluss.json"
+  ],
+  "hinweis": "Lokale Pfade in Berichten entfernt; Quellprogramme nicht übersetzt oder simuliert. Die erste öffentliche Übernahme ist kein nachträglich erfundener Entwicklungsschritt. Native Produktnachweise behalten ihre ursprünglichen tatsächlichen Zeiten.",
+  "veroeffentlichungskopie_fachlich_geprueft_am": "2026-11-18T15:21:44.726Z"
+}

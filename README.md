@@ -1,52 +1,45 @@
-# Sensorsimulation und industrielle Anzeige
+# Temperatursensor in C++ simulieren
 
-Stand: 13. November 2026 — **P06-T04 lokal erledigt und geprüft; Qt-Skizze und MQTT-Vertrag vorbereitet**. Veröffentlichung durch den übergeordneten Dienst ausstehend. Ursprünglicher Basiszieltermin verfehlt; Fortsetzungsplan: offene Entwicklung bis 15. November, Commitfolge bis 22. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Ein Prototyp soll Temperaturverläufe überwachen und Schwellenüberschreitungen reproduzierbar melden, bevor echte Sensorhardware verfügbar ist.
 
-Ein Prototyp soll Temperaturen überwachen und eine Schwellenüberschreitung melden.
+![Projektaufbau](dokumentation/ueberblick.svg)
 
-Ergebnis: Portabler C++-Kern mit reproduzierbaren Eingaben; Qt und MQTT als kleine Erweiterungen.
+**Veröffentlichungsstand: Phase 4/4.** Dieses eigenständige Repository übernimmt zunächst den bereits lokal committeten Stand. Weitere fachliche Phasen werden im Abstand von mindestens vier Stunden veröffentlicht. Die technische Entwicklung und die öffentliche Veröffentlichung haben unterschiedliche echte Zeitpunkte.
 
-Vorgesehene Technologien: C++, CMake, Linux, Embedded, MQTT/IoT, Qt, UML. Eine Nennung ist kein Nachweis einer Umsetzung.
+## Was hier zu sehen ist
 
-## Einstieg
+| Schritt | Inhalt | Hier veröffentlicht |
+|---|---|---|
+| 1 | Sensorvertrag und Beispieldaten | Ja |
+| 2 | Kompilierbarer C++-Kern | Ja |
+| 3 | CMake-Bau und Szenarien | Ja |
+| 4 | Anzeigevertrag und Grenzfälle | Ja |
 
-1. [Lastenheft](LASTENHEFT.md) lesen.
-2. [Erstes Ticket](tickets/P06-T01.md) öffnen.
-3. [Technischen Einstieg](START.md) prüfen und ein Ticket nach dem anderen bearbeiten.
-4. [Arbeitsjournal](ARBEITSJOURNAL.md) und echte Nachweise aktualisieren.
+## Fachlicher Nutzen
 
-Abhängigkeiten: keine weiteren Projekte.
+C++-Fachlogik, reproduzierbarer Build, Zustandsübergänge und technische Grenzwertprüfung.
 
-## Geprüfter Teilstand P06-T01
+## Lokal starten
 
-Der [Sensorvertrag](tickets/P06-T01.md) beschreibt Zustände, die Warnschwelle von einschließlich 30 °C, den synthetischen Messbereich −40 bis 125 °C und fehlende Daten. [projekt.json](projekt.json) enthält sechs erwartete JSON-Nachrichten zu den unveränderten CSV-Eingaben. Der lokale Abgleich prüft Nachrichtenformat, Reihenfolge und Grenzfälle; [Prüfausgabe](nachweise/P06-T01-pruefung.txt).
+Im geklonten Repository ausführen; die benötigte Laufzeit muss installiert sein. Python-Beispiele verwenden 3.12, Node-Beispiele 24 und C# die im Projekt angegebene .NET-Version. Befehle mit uv laden die dort genau bezeichneten Pakete bei Bedarf.
 
-Dieser Teilstand ist eine geprüfte Spezifikation; die Ergänzung durch P06-T02 folgt unten.
+```powershell
+cmake -S . -B build
+cmake --build build
+```
 
-## Geprüfter C++-Kern P06-T02
+Ausführliche technische Befehle: [START.md](START.md). [Öffentlicher Prüfstand](ABNAHME.json) und [Quellphasen](VERLAUF.json) dokumentieren Herkunft und echte Ausführungsdaten. Eine neue Repositorykopie ist kein neuer nativer Desktoplauf.
 
-[src/main.cpp](src/main.cpp) liest die Temperaturfolge ein und bestimmt pro Messung den Zustand ohne Hysterese. Die Konsole gibt je Schritt eine JSON-Nachricht aus. Ungültige Messwerte ergeben `null`; fehlerhafte CSV-Struktur oder eine fehlende Datei führen zu einer deutschen Fehlermeldung und Exitcode 1 ohne Teilfolge.
+## Ergebnis des lokal geprüften Schlussstands
 
-Tatsächlich mit GCC 13.1.0 als C++17 ohne Warnungen kompiliert und ausgeführt: sechs unveränderte Originalmessungen, zehn flüchtige Messfälle und vier Datei-/Strukturfehler. [Prüfbefehl](START.md), [Prüfausgabe](nachweise/P06-T02-pruefung.txt). Studentische Schätzung für T02: 90 Minuten; tatsächliche Assistentenzeit und beide Versuche stehen im Journal.
+Tatsächlich kompilierte C++-Ausführung und reproduzierbare Temperatur-/Fehlerszenarien.
 
-Die direkte Kompilierung diente ausschließlich der Abnahme dieses Kerns in P06-T02. Die Nutzung des vorhandenen GCC belegt keine praktische Nutzung der CLion-Oberfläche.
+## Grenzen
 
-## Geprüfter CMake-Bau P06-T03
+Simulation ohne Hardware. Qt und MQTT sind nicht implementiert.
 
-Mit CMake 4.1.2, Ninja 1.12.1 und GCC 13.1.0 unter Windows aus einem frischen Bauordner kompiliert und die erzeugte C++-Konsole tatsächlich ausgeführt. Die sechs Originalmessungen entsprechen dem Sensorvertrag. Zusätzliche flüchtige Eingaben zeigen bei 29,5 / 30 / 30,5 / 29,5 °C die Folge `normal, warnung, warnung, normal`. Ein nicht numerischer Messwert ergibt `null` und `ungueltig`, der nächste gültige Wert wieder `normal` (Exitcode 0). Eine fehlerhafte Schrittfolge wird mit deutscher Fehlermeldung und Exitcode 1 ohne Teilfolge abgewiesen.
+Eigenes kleines Lernprojekt mit synthetischen Daten, mit KI-Unterstützung entwickelt und geprüft. Keine Aussage über Berufserfahrung, menschliche Arbeitsstunden oder praktische Verwendung weiterer nur geplanter Produkte.
 
-Wiederholung: [Startanleitung](START.md), [Prüfskript einschließlich Szenarioeingaben](nachweise/pruefe_cmake_szenarien.py), [Ausführungsprotokoll](nachweise/P06-T03-pruefung.txt), [Abschluss mit Dateiprüfsummen](nachweise/P06-T03-abschluss.json). Originaldaten: unverändert sechs Einträge. Studentische Schätzung: 75 Minuten; tatsächliche Assistentenzeit im Journal.
+## Entwicklungshistorie
 
-Der freigegebene Endpunkt umfasst CMake und diese Szenarien. Das zuvor abweichende UML-Kriterium im Ticket wurde darauf begrenzt; UML bleibt offen. Alle übergreifenden Lastenheftkriterien bleiben zur gesonderten Gesamtabnahme offen. Keine Ausführung von Qt, MQTT, Hardware, Linux oder der CLion-Oberfläche behauptet. Hier endet P06-T03; keine Folgephase begonnen.
-
-[Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
-
-## Geprüfte Vorbereitung P06-T04
-
-Die [Textskizze und der MQTT-Vertrag](tickets/P06-T04.md) beschreiben die Anzeige bei Normalzustand, Warnung und ungültigem Messwert sowie den späteren lokalen Nachrichtenaustausch. `projekt.json` enthält Anzeigetexte und Transportparameter. Die C++-Konsole wurde mit GCC 13.1.0 frisch kompiliert und mit allen sechs unveränderten Originalmessungen ausgeführt. Die Nachrichten und daraus abgeleiteten Textprojektionen stimmen mit dem Entwurf überein: 20 / 25 / 31 / 30 / 29 / — °C; Normal / Normal / Warnung / Warnung / Normal / Ungültig.
-
-Wiederholung: [Startanleitung](START.md), [Prüfskript](nachweise/pruefe_anzeigevertrag.py), [Protokoll](nachweise/P06-T04-pruefung.txt), [Abschluss](nachweise/P06-T04-abschluss.json). Studentische Schätzung: 45 Minuten; tatsächliche Assistentenzeit im Journal. Nur Vorbereitung lokal abgenommen; Qt, MQTT und Hardware wurden nicht ausgeführt und daraus wird keine Kompetenz abgeleitet. Ihre Verfügbarkeit wurde für diesen Entwurf nicht geprüft. P06-V01/P06-V02 bleiben geplant und nicht begonnen, UML und Lastenheft A1–A4 offen. Hier endet T04.
-
-## Projektsprache
-
-Dokumentation, selbst gewählte Bezeichner, Kommentare, Meldungen und Beispieldaten werden auf Deutsch geschrieben. Festgelegte API-Schlüssel, Sprachsyntax und Produktnamen bleiben unverändert.
+[Entwicklungshistorie](HISTORIE.md): die vorhandenen lokalen Änderungen, ihre ursprünglichen Daten und die spätere GitHub-Übernahme.
